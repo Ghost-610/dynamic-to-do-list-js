@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add a new task when Enter key is pressed in the input field
     taskInput.addEventListener('keypress', function (e) {
-        if (e.which === 13 || e.keyCode === 13) { // Checking for Enter key (keyCode 13)
+        if (e.key === 'Enter' || e.which === 13 || e.keyCode === 13) {
+            // Checking for Enter key (key code 13) using modern and older methods
             addTask();
         }
     });
