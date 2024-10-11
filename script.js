@@ -1,9 +1,9 @@
 // Wait for the DOM to be fully loaded before running the script
 document.addEventListener('DOMContentLoaded', function () {
     // Select DOM elements
-    const addButton = document.getElementById('add-task-btn'); // Corrected ID here
-    const taskInput = document.getElementById("task-input");
-    const taskList = document.getElementById('task-list');
+    const addButton = document.getElementById('add-task-btn'); // Button to add task
+    const taskInput = document.getElementById("task-input"); // Input field for tasks
+    const taskList = document.getElementById('task-list'); // Unordered list for tasks
 
     // Function to add a new task
     function addTask() {
@@ -19,11 +19,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // Create a new list item for the task
         const newTask = document.createElement('li');
         newTask.textContent = taskText; // Set the task text
+        newTask.classList.add('task-item'); // Add a class to the task item for styling
 
         // Create a remove button for the task
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Remove'; // Set button text
-        removeButton.className = 'remove-btn'; // Add a class for styling
+        removeButton.classList.add('remove-btn'); // Add a class for styling the button
 
         // Add the remove button to the task item
         newTask.appendChild(removeButton);
